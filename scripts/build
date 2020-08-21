@@ -1,0 +1,25 @@
+#!/bin/bash
+
+protoc \
+  --go_out=. \
+  --go-grpc_out=. \
+  --go_opt=paths=source_relative \
+  --go-grpc_opt=paths=source_relative \
+  hello/hello.proto
+
+if [[ "$1" ]]; then
+  echo "$ go build ./bin/$1"
+  go build -o ./target/$1 ./bin/$1
+
+  echo
+else
+  binaries=$(ls bin)
+
+  for binary in $binaries
+  do
+    echo "$ go build ./bin/$binary"
+    go build -o ./target/$binary ./bin/$binary
+
+    echo
+  done
+fi

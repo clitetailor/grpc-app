@@ -1,0 +1,11 @@
+#!/bin/bash
+
+scripts=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
+
+$scripts/build $1
+
+echo "$ go run ./bin/$1"
+go run ./bin/$1
+
+echo
+echo Done.
