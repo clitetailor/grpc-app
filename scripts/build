@@ -5,20 +5,20 @@ protoc \
   --go-grpc_out=. \
   --go_opt=paths=source_relative \
   --go-grpc_opt=paths=source_relative \
-  hello/hello.proto
+  proto/hello.proto
 
 if [[ "$1" ]]; then
-  echo "$ go build ./bin/$1"
-  go build -o ./target/$1 ./bin/$1
+  echo "$ go build ./$1"
+  go build -o ./target/$1 ./$1
 
   echo
 else
-  binaries=$(ls bin)
+  binaries="client server"
 
   for binary in $binaries
   do
-    echo "$ go build ./bin/$binary"
-    go build -o ./target/$binary ./bin/$binary
+    echo "$ go build ./$binary"
+    go build -o ./target/$binary ./$binary
 
     echo
   done
