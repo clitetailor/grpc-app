@@ -1,0 +1,22 @@
+{
+  "name": "grpc-web-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve ./dist",
+    "build": "webpack"
+  },
+  "author": "clitetailor",
+  "license": "MIT",
+  "dependencies": {
+    "google-protobuf": "^3.13.0",
+    "grpc-web": "^1.2.1",
+    "prettier": "^2.0.5",
+    "serve": "^11.3.2",
+    "webpack": "^4.44.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.12"
+  }
+}
